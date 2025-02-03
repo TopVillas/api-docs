@@ -10,10 +10,16 @@ The **[Top Villas Vacation Rentals API](https://thetopvillas.com)** gives you se
 
 ## Get Started Today
 
-**API credentials and endpoints are issued upon request.** Contact us to unlock direct integration with our **[Top Villas](https://thetopvillas.com)** premium vacation rental database.  
+**API credentials and endpoints are issued upon request.**
+
+[**Contact us**](mailto://info@thetopvillas.com) to unlock direct integration with **[Top Villas'](https://thetopvillas.com)** premium vacation rental database.  
 
 ### Further Reading
 
 - [Integration Overview](./integration-overview.md)
 - [Static Listing Data](./static-listing-data.md)
 - [Live Pricing and Availability Data](./live-pricing-and-availability.md)
+
+### Developer Documentation
+
+- [Authentication](./authentication-technical.md)
