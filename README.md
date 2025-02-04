@@ -1,5 +1,7 @@
 # Top Villas Vacation Rentals API
 
+![Top Villas Vacation Rentals API Logo](./assets/tvapi-logo-white-bg.png)
+
 The **[Top Villas Vacation Rentals API](https://thetopvillas.com)** gives you seamless access to a **world-class portfolio** of over **10,000+ premium vacation rental properties** across the globe. Our API delivers both **static listing data**—including property names, descriptions, high-resolution images, and amenities—as well as **live pricing and availability data** to ensure your platform always displays the most up-to-date information.  
 
 ## Why Choose the Top Villas API?
