@@ -175,3 +175,5 @@ The Top Villas API responds to a Query message with a Transaction message contai
   - **`Baserate`**: The base cost of the stay, in the specified currency.
   - **`Tax`**: Any applicable taxes for the stay.
   - **`OtherFees`**: Additional fees associated with the stay.
+
+**Although each individual item has it's own currency, it is safe to assume that all values given for a single property will be in the same currency.**
