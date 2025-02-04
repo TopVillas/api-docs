@@ -1,11 +1,11 @@
-# **Static Listing Data API**  
+# **Listing Data API**  
 
-The **Static Listing Data API** provides access to regularly updated property listings in **XML format**, allowing you to synchronize your local database with the latest static listing data.  
+The **Listing Data API** provides access to regularly updated property listings in **XML format**.  
 
-## Endpoint
+## Listings Endpoint
 
 ```bash
-GET https://{api_host}/api/xml/listings
+GET /api/xml/listings
 ```
 
 ## Response Format
@@ -45,7 +45,7 @@ When making a request to this endpoint, expect the following headers in the resp
 
 ## **Listing File Format**
 
-The listing data files provided by the **Static Listing Data API** conform to the following XML schema:  
+The listing data files provided by the **Listing Data API** conform to the following XML schema:  
 [https://gstatic.com/localfeed/local_feed.xsd](https://gstatic.com/localfeed/local_feed.xsd)
 
 However, some optional fields defined in the schema are **always omitted**, while others are **always included** to maintain consistency.
@@ -199,9 +199,7 @@ The `<attributes>` element contains multiple `<client_attr>` elements that descr
   - `name="washer_dryer"`: Indicates if a washer and dryer are available.
   - `name="website"`: Direct URL to the listing’s page.
 
-This structure ensures that all key listing information, including descriptions, user reviews, images, and property attributes, is properly organized and accessible.
-
-### Example Listing
+## Example Listing
 
 ```xml
 <content>
@@ -269,3 +267,8 @@ This structure ensures that all key listing information, including descriptions,
  </content>
  ```
  
+ ## Google References
+
+- [Hotel List XML Specification](https://developers.google.com/hotels/hotel-prices/dev-guide/hlf)
+- [Vacation Rental Hotel List XML Extensions Specification](https://developers.google.com/hotels/vacation-rentals/dev-guide/vr-attributes)
+- [Hotel List XSD](http://www.gstatic.com/localfeed/local_feed.xsd)

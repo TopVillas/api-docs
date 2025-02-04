@@ -1,8 +1,8 @@
 # Live Pricing and Availability
 
-The Top Villas API exclusively publishes Length of Stay (LoS) pricing data as this is the only format that guarantees unambiguous and accurate price and availability data. We provided data **330 days ahead** for up to **30 nights** for the vast majority of our online bookable vacation rentals.
+The **Top Villas API** exclusively publishes **Length of Stay (LoS)** pricing data as this is the only format that guarantees unambiguous and accurate price and availability data. We provide data **330 days ahead** for up to **30 nights** for the vast majority of our online bookable vacation rentals.
 
-We allow you to maintain a live view of our pricing and availability dataset using an [incremental update protocol](https://developers.google.com/hotels/hotel-prices/dev-guide/delivery-mode#hints). The protocol allows asynchronous, queue, out of order message processing and is eventually consistent once you've processed your entire message queue. Don't worry all will become clear later on!
+We allow you to maintain a live view of our pricing and availability dataset using an [incremental update protocol](https://developers.google.com/hotels/hotel-prices/dev-guide/delivery-mode#hints). See the [Integration Guide](./guide.md) for more details.
 
 The full dataset is potentially quite large, so you may choose to receive only a subset of listings, restrict updates based on the latest check-in date, or limit the stay duration to less than the maximum number of nights.
 
@@ -17,7 +17,7 @@ Price and availability data in the Top Villas API is presented in Length of Stay
 
 This combination serves as the primary key for an LoSP entry.
 
-The vast majority of properties in the Top Villas portfolio do not vary their price by the number of guests. To prevent a combinatorial explosion of pricing entries, we only publish prices for the base number of guests—this is the lowest price, below which reducing the number of guests does not lower the price.
+The vast majority of properties in the Top Villas portfolio do not vary their price by the number of guests. To prevent a combinatorial explosion of pricing entries, we only publish prices for the base number of guests—this is the lowest price, below which reducing the number of guests does not lower the price. In the vast majority of cases this is equal to the capacity of the listing.
 
 Additionally, an LoSP contains pricing information. At a minimum, it must include a base price, but the Top Villas API also provides additionally fees and taxes:
 
@@ -27,15 +27,17 @@ Additionally, an LoSP contains pricing information. At a minimum, it must includ
 
 ### Number of Data Points
 
-Check-in dates can be up to **330 days ahead**, and stays can range up to **30 nights**. This gives a theoretical maximum of 9,900 possible bookable vacations per listing. However, in practice, the majority of listings have far fewers. For example, a one-week booking will eliminate approximately 300 potential bookable vacations.
+Check-in dates can be up to **330 days ahead**, and stays can range up to **30 nights**. This gives a theoretical maximum of 9,900 possible bookable vacations per listing. However, in practice, the majority of listings have far fewer. For example, a one-week booking will eliminate approximately 300 potential bookable vacations.
 
-Initially, we provide sparse data, meaning we do not return data for non-bookable dates. However, if a previously bookable date becomes unavailable, we send an explicit unavailable entry to reflect the change in availability.
+You may choose to not store unavailable bookings, which could significantly reduce the amount of data you need to hold.
 
 ## Incremental Update Flow
 
-The diagram below describes the incremental update flow that you will need to implement to integrate with the live pricing and availability API. Later on a practical implementation guide will be given.
+The diagram below describes the incremental update flow that you will need to implement to integrate with the live pricing and availability API. See the [Integration Guide](./guide.md) for more details.
 
-![Incremental Update Flow](../assets/changed-pricing-flow.png)
+<p align="center">
+<img src="./assets/changed-pricing-flow.png" />
+</p>
 
 1. You send a Hint Request message to `/api/xml/hint`.
 2. The Top Villas API responds with a list of properties and the dates that have updated pricing.
@@ -48,7 +50,11 @@ It is your responsibility to maintain a cache of the data based on your initial 
 
 ### Hint Request Message
 
-`POST` `/api/xml/hint`
+#### Hint Request Endpoint
+
+```bash
+POST /api/xml/hint
+```
 
 A Hint Request message is sent to the Top Villas API to indicate that you are requesting an update on pricing changes since the last fetch. This message contains a timestamp marking the last time a Hint Request was processed.
 
@@ -108,6 +114,12 @@ A Hint Response message contains zero or more `<Item>` elements. Each `<Item>` r
 
 After receiving a Hint Response containing an `<Item>` element indicating a property has pricing updates, you send a Query message to the Top Villas API to request updated pricing data.
 
+#### Query Endpoint
+
+```bash
+POST /api/xml/query
+```
+
 #### Example Query Request
 
 ```xml
@@ -124,7 +136,7 @@ After receiving a Hint Response containing an `<Item>` element indicating a prop
 
 ### Query Parameters
 
-- **`hintId`**: A unique identifier linking this query to a previous Hint Request.
+- **`hintId`**: A unique identifier linking this query to a previous Hint Request for tracing purposes. The Top Villas API currently ignores this.
 - **`FirstDate`**: The earliest check-in date for which pricing data is requested.
 - **`LastDate`**: The latest check-in date for which pricing data is requested.
 - **`Nights`**: The total number of nights for each check-in date in the range. The maximum value is **30**, but you can specify a lower number based on your maximum length of stay.
@@ -176,4 +188,14 @@ The Top Villas API responds to a Query message with a Transaction message contai
   - **`Tax`**: Any applicable taxes for the stay.
   - **`OtherFees`**: Additional fees associated with the stay.
 
-**Although each individual item has it's own currency, it is safe to assume that all values given for a single property will be in the same currency.**
+**Although each individual item has it's own currency, it is safe to assume that all values given for a single property will be in the same currency.** So you can store the currency at the Property level.
+
+## Google References
+
+- [Google Vacation Rentals Changed Pricing Delivery Mode](https://developers.google.com/hotels/hotel-prices/dev-guide/delivery-mode#hints).
+- [Hint and Query Messages](https://developers.google.com/hotels/hotel-prices/xml-reference/queries)
+- [Hint Request XSD](./xsd/hint_request.xsd)
+- [Hint XSD](https://www.gstatic.com/ads-travel/hotels/api/hint.xsd)
+- [Query XSD](https://www.gstatic.com/ads-travel/hotels/api/query.xsd)
+- [Transaction Messages](https://developers.google.com/hotels/hotel-prices/xml-reference/transaction-messages)
+- [Transaction XSD](https://www.gstatic.com/ads-travel/hotels/api/transaction.xsd)

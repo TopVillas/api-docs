@@ -2,7 +2,7 @@
 
 Before integrating with the **Top Villas API**, we recommend familiarizing yourself with the following:  
 
-- [Google Hotel API](https://developers.google.com/hotels/hotel-prices)  
+- [Google Hotel Prices API](https://developers.google.com/hotels/hotel-prices)  
 - [Google Vacation Rentals Extensions](https://developers.google.com/hotels/vacation-rentals/dev-guide/onboarding)  
 
 Our API is a **subset of Google's API**, which is quickly becoming the **de facto standard** for communicating vacation rental data. Understanding Google's specifications will help ensure a smooth integration with the Top Villas API.  
@@ -21,25 +21,19 @@ Authentication follows a **JWT Security Token** flow:
 - Include the token in all API requests.  
 - Refresh the token before expiration to maintain access.
 
-[Developer Documentation](./authentication-technical.md)
+[Auth Documentation](./auth.md)
 
-## **Periodic Static Data Synchronization**  
+## **Periodic Listing Data Synchronization**  
 
-To maintain the highest level of accuracy and consistency in your property listings, your system should **fetch the latest static property data at least once per day**.  
-
-### Why This Matters
-
-- **Keep Listings Up to Date** – Ensure property details, descriptions, and images always reflect the latest updates.  
-- **Enhance User Experience** – Display the most current amenities, room configurations, and customer reviews to potential travelers.  
-- **Prevent Data Staleness** – Stay aligned with any changes in property availability, features, or descriptions without manual intervention.  
+To maintain the highest level of accuracy and consistency in your property listings, your system should **fetch the latest listing data at least once per day**.  
 
 This daily sync ensures your platform always presents **reliable and high-quality** property information to users.
 
-[Further Reading](./static-listing-data.md)
+[Listing Documentation](./listing.md)
 
 ## **Maintain a Price & Availability Cache**  
 
-To deliver **fast and accurate pricing** while minimizing unnecessary data transfers, your system should maintain a **local cache** of price and availability data, updated incrementally via **Hint Requests**.  
+To deliver **fast and accurate pricing** while minimizing unnecessary data transfers, your system should maintain a **local cache** of price and availability data via incremental updates.  
 
 ### How It Works
 
@@ -55,6 +49,7 @@ To deliver **fast and accurate pricing** while minimizing unnecessary data trans
   - Rely on cached data for the majority of queries rather than pulling full property lists frequently.  
   - This approach enhances performance, **reduces API load**, and ensures a smoother user experience.  
 
-By following this caching strategy, you **maximize efficiency, reduce API strain, and ensure real-time pricing accuracy**, providing a seamless experience for your users.  
+By following this caching strategy, you **maximize efficiency, reduce API strain, and ensure real-time pricing accuracy**, providing a seamless experience for your users.
 
-[Further Reading](./live-pricing-and-availability.md)
+[Pricing Documentation](./pricing.md)
+[Integration Guide](./guide.md)

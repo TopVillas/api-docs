@@ -1,6 +1,6 @@
 # **Authentication**
 
-Authentication for the Top Villas Vacation Rentals API follows a **JWT (JSON Web Token) Security Token flow**. To interact with the API, you must **obtain a token** using your credentials and include it in the **Authorization header** of every request.
+Authentication for the Top Villas API follows a **JWT (JSON Web Token) Security Token flow**. To interact with the API, you must **obtain a token** using your credentials and include it in the **Authorization header** of every request.
 
 ## **Authentication Flow**  
 
@@ -23,7 +23,7 @@ Authentication is based on the **JWT (JSON Web Token)** security scheme.
 
 - Do not persist the access token—store it only in memory and discard it once expired.
 
-### Refresh the Access Token Before Expiration
+### 3. Refresh the Access Token Before Expiration
 
 - Before the access token expires, use the **refresh token** to obtain a new one.  
 - The refresh token is **persistent** and can be securely stored for long-term authentication.  
@@ -34,18 +34,17 @@ Authentication is based on the **JWT (JSON Web Token)** security scheme.
 2. Receive a **new access token** (and possibly a new refresh token).
 3. **Discard the old access token** and use the new one for authentication
 
-### Best Practices for Token Storage
-
-- **Access Token**: Store **only in memory** (e.g., in a session variable) to prevent unauthorized persistence.  
-- **Refresh Token**: May be **securely stored** (e.g., in a database) for long-term session continuity.
-
-**NOTE** when your refresh token expires you simply need to login again.
+**NOTE:** when your refresh token expires you simply need to login again.
 
 ## Obtain a JWT Token
 
-`/api/auth/login`
-
 Request a new JWT token.
+
+### Login Endpoint
+
+```bash
+GET /api/auth/login
+```
 
 ### Login Request
 
@@ -124,9 +123,13 @@ curl -X GET https://{api_host}/api/protected/resource \
 
 ## Refreshing the JWT Token
 
-`/api/auth/refresh`
-
 Tokens have an expiration time, so you need to refresh them before they expire (or you can login again).
+
+### Refresh Endpoint
+
+```bash
+GET /api/auth/refresh
+```
 
 ### Refresh Request
 
