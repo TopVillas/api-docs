@@ -52,4 +52,5 @@ To deliver **fast and accurate pricing** while minimizing unnecessary data trans
 By following this caching strategy, you **maximize efficiency, reduce API strain, and ensure real-time pricing accuracy**, providing a seamless experience for your users.
 
 [Pricing Documentation](./pricing.md)
+
 [Integration Guide](./guide.md)
