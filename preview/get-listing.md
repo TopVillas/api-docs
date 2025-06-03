@@ -306,7 +306,7 @@ These reviews have been submitted by our past guests through our post-stay feedb
 }
 ```
 
-- **line1** `(string, nullable)`
+- **line1** `(string)`
   Primary street address line (e.g., `"530 Muirfield Loop"`).
 
 - **line2** `(string, nullable)`
@@ -321,7 +321,7 @@ These reviews have been submitted by our past guests through our post-stay feedb
 - **country** `(string)`
   Two-letter ISO country code (e.g., `"US"`).
 
-- **postcode** `(string, nullable)`
+- **postcode** `(string)`
   Postal code (e.g., `"34747"`).
 
 - **lat** `(number, double)`
@@ -331,7 +331,7 @@ These reviews have been submitted by our past guests through our post-stay feedb
   Longitude coordinate for this address.
 
 - **googlePlaceId** `(string, nullable)`
-  Google Places identifier for this address. May be `null` when this does not exist.
+  Google Places identifier for this address. May be `null`.
 
 ---
 
@@ -347,7 +347,7 @@ These reviews have been submitted by our past guests through our post-stay feedb
     "maxGuests": 24,
     "bedrooms": 11,
     "bathrooms": 10,
-    "descriptionMarkdown": "[//]: # (BEGIN summary)\n\nThis expansive vacation home offers 11-bedrooms, 10 bathrooms and has enough space to sleep up to 24 guests. Inside, you will find an open-plan living and dining area, a fully equipped kitchen with breakfast bar, additional downstairs living area, home gym, downstairs and upstairs games room, upstairs loft area, home theater, and comfortable themed bedrooms. Outside highlights include a private screened pool with hot tub, sunloungers, covered patio with an alfresco dining area, outdoor fireplace, outdoor kitchen and flat-screen TVs, tavern bar with bar-style seating, table tennis, and a main and secondary balcony both overlooking the pool. This home is situated just 6 miles from Disney World in the prestigious Reunion Resort, where you will benefit from a host of fantastic amenities which have been provided to make your stay memorable. These include the Reunion Grande Hotel with its lively bars and restaurants, 2 Clubhouses, a fantastic waterpark complete with lazy river and beach bar, 6 communal pools, a Spa, a tennis complex and three signature-designed golf courses.Please note certain amenities will require Reunion Resort membership, please ask your sales agent for further details.\n\n[//]: # (END summary)\n\n[//]: # (BEGIN description)\n\n### Official Reunion Resort Home - Full Use of Amenities\n* Complimentary, unlimited water park entry\n* Unlimited access to 3 golf courses - Green fees apply\n* Complimentary on-resort shuttle service 24/7\n\n**Please note: This vacation home is provided for general vacation use only. Vacation rentals may not be used for events or group gatherings that exceed occupancy.**\n**Please note: Fireplace(s) not allowed for guest use, homeowner use only.**\n\n## Key features\n* 11 bedrooms\n* 10 bathrooms\n* Sleeps 24\n* Private pool\n* Hot tub\n* Games room\n* Home theater\n* Sauna\n* Themed bedrooms\n* Access to resort amenities\n\n## Bedrooms\n\n### Ground floor\n* Bedroom 1 - King-size bed; en-suite bathroom includes double vanity, separate bathtub and walk-in shower\n* Bedroom 2 - King-size bed; en-suite bathroom includes single vanity and separate bathtub\n* Bedroom 3 - King-size bed; en-suite bathroom includes double vanity and separate bathtub\n* Bedroom 4 - King-size bed; en-suite bathroom includes single vanity and walk-in shower\n* Bedroom 5 - King-size bed; adjacent bathroom includes single vanity and walk-in shower\n* Bedroom 6 - King-size bed; adjacent bathroom includes single vanity and walk-in shower\n \n### First floor\n* Bedroom 7 - King-size bed; en-suite bathroom includes single vanity and walk-in shower\n* Bedroom 8 - Themed bedroom with king-size bed; en-suite bathroom includes single vanity and walk-in shower\n* Bedroom 9 - Themed bedroom with king-size bed; en-suite bathroom includes single vanity and walk-in shower\n* Bedroom 10 - Themed bedroom with bunk bed (double/double); en-suite bathroom includes single vanity and walk-in shower\n* Bedroom 11 - Themed bedroom with 2 custom-built bunk beds (double/double); en-suite bathroom includes single vanity and bathtub/shower combination\n\n## Living area\n* Open-plan living area\n* Fully equipped kitchen\n* Breakfast bar with seating \n* Dining table and chairs  \n* Tastefully furnished living room with fireplace, flat-screen TV and comfortable sofas\n* Additional downstairs living area with fireplace and lounge area\n* Upstairs loft area with pool table, kitchenette, home bar with bar-style seating, set of table and chairs, lounge area, flat-screen TVs and balcony access\n\n## Pool area\n* Private pool\n* Hot tub (pool heat required)\n* Sunloungers\n* 2 in-pool ledge loungers\n* Covered patio with an alfresco dining area, outdoor fireplace, outdoor kitchen and flat-screen TVs\n* Tavern bar with bar-style seating\n* Outdoor theater\n* Table tennis\n* Built-in pool basketball\n* Main balcony with flat-screen TV and an alfresco dining & lounge area\n* Secondary balcony with swing chair and a set of table and chairs\n\n## Home entertainment\n* Flat-screen TVs in living area and all bedrooms\n* First floor games room includes multiple arcade machines, basketball game, gaming chairs and flat-screen TVs\n* Second floor games room includes multiple arcade machines, air-hockey and play-slide\n* Home theater includes projector screen, cinema-style seating and kitchenette\n* Home gym includes treadmill, free-weights, multi-weight machine, exercise bike, yoga mats, sauna, signed memorabilia display and an en-suite bathroom which includes single vanity and walk-in shower\n\n## General\n* Air conditioning throughout\n* Complimentary wifi\n* Bedding and towels included\n* Private parking\n* Surround sound (inside and outside)\n\n## Laundry room\n* Washer and dryer\n* Iron and ironing board\n\n## Children's equipment available for hire\n* Crib\n* Stroller\n* High chair\n* Pack and play\n\n## Places of interest\n* Golf course - 1 mile\n* Supermarket - 1 mile\n* Shopping mall - 2 miles\n* Disney World - 6 miles\n* Seaworld - 15 miles\n* Universal Studios - 21 miles\n* Legoland - 25 miles\n* Airport - 27 miles\n* Beaches - 75 miles\n\n[//]: # (END description)",
+    "descriptionMarkdown": "[//]: # (BEGIN summary)\n\nThis expansive vacation ... - 27 miles\n* Beaches - 75 miles\n\n[//]: # (END description)",
     "searchRank": 1,
     "agentDiscountPercentage": 0.05,
     "lat": 28.28627586364746,
@@ -523,7 +523,7 @@ These reviews have been submitted by our past guests through our post-stay feedb
             "reviewerLastName": "ford",
             "reviewerDisplayName": "karen ford",
             "title": "Family vacation",
-            "content": "My family and I enjoyed our time at Reunion 4. The vacation home is awesome. The pool was thoroughly enjoyed by all.  There were 24 of us and the house never seemed crowded. ",
+            "content": "My family and I enjoyed our time at Reunion 4. ... There were 24 of us and the house never seemed crowded. ",
             "rating": 5,
             "ratingCleanliness": 5,
             "ratingComfort": 5,
@@ -540,7 +540,7 @@ These reviews have been submitted by our past guests through our post-stay feedb
             "reviewerLastName": "Sheridan",
             "reviewerDisplayName": "Deborah Sheridan",
             "title": "5 star review",
-            "content": "Our stay in the villa at Reunion was absolutely fantastic! From the moment we arrived, we were blown away by the beauty and luxury of the villa. The spacious layout, modern amenities, and stylish decor made us feel like we were staying in a 5-star resort.\r\n\r\nThe villa was immaculately clean and well-maintained, with everything we needed for a comfortable and relaxing stay. The private pool and outdoor living space were perfect for enjoying the Florida sunshine and unwinding after a day of exploring the nearby theme parks.\r\n\r\nThe staff at Reunion were friendly and attentive, ensuring that our every need was met throughout our stay. We also enjoyed the convenience of having access to the resort's amenities, including the golf courses, restaurants, and water park.\r\n\r\nOverall, our experience at Reunion was top-notch and we would highly recommend staying in one of their villas. 5 stars all the way!",
+            "content": "Our stay in the villa at Reunion was ... 5 stars all the way!",
             "rating": 5,
             "ratingCleanliness": 5,
             "ratingComfort": 5,
@@ -557,7 +557,7 @@ These reviews have been submitted by our past guests through our post-stay feedb
             "reviewerLastName": "Gray",
             "reviewerDisplayName": "Larry Gray",
             "title": "Nice property!",
-            "content": "The property is simply beautiful! It's accomodating and family friendly. The movie theater and game room is exceptional! The bedrooms were roomy and there even is a gym. The pool is screened in and it has a nice outside kitchen. ",
+            "content": "The property is simply beautiful! It's ... outside kitchen. ",
             "rating": 5,
             "ratingCleanliness": 5,
             "ratingComfort": 5,
@@ -591,7 +591,7 @@ These reviews have been submitted by our past guests through our post-stay feedb
             "reviewerLastName": "Hudson",
             "reviewerDisplayName": "Devan Hudson",
             "title": "AMAZING HOME",
-            "content": "The pictures don't do this home any justice!! It is absolutely gorgeous. The kids enjoyed themselves. We are looking to book again in the future. With COVID-19 going on, we wanted to make sure we booked a home that had all the bells and whistles so that we did not have to go out much and this home had it all! We booked this home for our little family of 5 so there was plenty of space for everyone. This home is HUGE!! ",
+            "content": "The pictures don't do this home ... This home is HUGE!! ",
             "rating": 5,
             "ratingCleanliness": 5,
             "ratingComfort": 5,
@@ -608,7 +608,7 @@ These reviews have been submitted by our past guests through our post-stay feedb
             "reviewerLastName": "Lang",
             "reviewerDisplayName": "John  Lang",
             "title": "Beautiful Home ",
-            "content": "My wife and I and our family enjoyed the home so much! It ‘s a Beautiful Home!  The Home is Definitely a 5 star Home!!",
+            "content": "My wife and I and our ... The Home is Definitely a 5 star Home!!",
             "rating": 5,
             "ratingCleanliness": 5,
             "ratingComfort": 5,
