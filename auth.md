@@ -43,7 +43,7 @@ Request a new JWT token.
 ### Login Endpoint
 
 ```bash
-GET /api/auth/login
+POST /api/auth/login
 ```
 
 ### Login Request
