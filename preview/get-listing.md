@@ -35,6 +35,7 @@ GET /api/listings/{listingId}
   "rooms": [ /* Room */, ... ],
   "images": [ /* Image */, ... ],
   "reviews": [ /* Review */, ... ],
+  "locations": [ "string", ... ],
   "address": { /* Address */ }
 }
 ```
@@ -102,6 +103,9 @@ Below is a detailed description of each property in **Listing**, including any n
 
 - **reviews** `(array of Review)`
   Array of review objects left by past guests.
+
+- **locations** `(array of string)`
+  Array of location names where a parent location is listed first.
 
 - **address** `(Address, nullable)`
   Nested object containing full address details (street lines, city, region, country, postal code, and geolocation). Although this field is nullable, all of our live villas have verified addresses.
@@ -616,6 +620,12 @@ These reviews have been submitted by our past guests through our post-stay feedb
             "ratingService": 5,
             "ratingValue": 5
         }
+    ],
+    "locations": [
+        "United States",
+        "Florida",
+        "Orlando",
+        "Reunion Resort"
     ],
     "address": {
         "line1": "530 Muirfield Loop",
